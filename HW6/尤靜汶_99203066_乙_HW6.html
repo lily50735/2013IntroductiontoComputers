@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<HTML>
+	<head>
+		<title>Quick Sort</title>
+		<style>
+			body{
+				color: 	brown;	
+				font-family: Microsoft Sans Serif, Cambria, DFHsiu Std W3, Microsoft JhengHei, DFKai-SB ;
+			}
+			table{
+				border: 1px black solid;
+				text-align: center;
+				margin-right: auto;
+				margin-left: auto;
+				z-index: 0;
+			}
+			tbody{
+				width:auto;
+				height:auto;
+			}
+			td{
+				border: 1px blue solid;
+				height: 40;
+				border-spacing:auto;
+				padding:10px;					
+			}
+			#div{
+				position: relative;
+			}
+			.divt{
+				position: relative; 
+				z-index:2;
+			}
+			#divbg{
+				position: absolute;
+				left:50%;
+				margin-left: -800px;
+				opacity: 0.3; 
+				z-index: -10;
+			}
+			#div2{
+				position: relative;
+				width: 100px;
+				height: auto;
+				margin-right: auto;
+				margin-left: auto;
+				background-color: grey;
+				color:white;
+				text-align: center;
+				border-radius: 5px;
+			}
+		</style>	
+	</head>
+	<body>
+		<div id="divbg">
+			<img src="http://jackmalcolm.com/blog/wp-content/uploads/2011/09/numbers.jpg"></img>
+		</div>
+		<div class="divt">
+			<table>
+				<tbody>
+					<tr>
+						<td colspan='2'>Quick Sort</td>
+					</tr>
+					<tr>
+						<td>您要製造的亂數量</td>
+						<td>
+							<input id="A" value=""></input>
+							<button type="button" onclick="ctrller('randomnum')">製造亂數</button>
+						</td>	
+					</tr>
+					<tr>
+						<td>您製造的亂數</td>
+						<td>
+							<p id="B"/>
+						</td>	
+					</tr>
+					<tr>
+						<td>
+							<button type="button" onclick="ctrller('quickSort')">排列您製造的亂數</button>
+						</td>
+						<td>
+							<p id="C"/>
+						</td>	
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="div2"> 
+				<p>尤靜汶 <br/>99203066</p>
+			</div>
+		<script>
+		var arr = new Array();
+		function ctrller(keyname){
+			if(keyname=='randomnum'){
+				randomnum();
+			}else if(keyname=='quickSort'){
+				quickSort(arr,0,arr.length-1);
+			}
+		}
+		function randomnum(){
+			var q = document.getElementById('A').value;
+			if(isNaN(q)){
+				alert('請輸入數字!');
+			}else{	
+				for (var i = 0; i <q; i++){
+					do{
+						arr[i]=Math.round(Math.random()*100);
+						for(var j=0;j<i;j++){
+							if (arr[i]==arr[j]){
+								arr[i]=0
+								break;
+							}
+						}
+					}while(arr[i]==0); 
+				}
+			}
+			document.getElementById('B').innerHTML=arr.toString();
+		}
+		function swap(arr,i,j){
+	        var t;
+	        t = arr[i];
+	        arr[i] = arr[j];
+	        arr[j] = t;
+	    } 
+	    function partition(arr, left, right) {
+	        var pk = arr[Math.floor((right + left) / 2)],
+	            i  = left,
+	            j  = right;
+	        while (i <= j) {
+	            while (arr[i] < pk) {
+	                i++;
+	            }
+	            while (arr[j] > pk) {
+	                j--;
+	            }
+	            if (i <= j) {
+	                swap(arr, i, j);
+	                i++;
+	                j--;
+	            }
+	        }
+	        return i;
+	    }
+	    function quickSort(arr, left, right) {
+	        var index;
+	        if (arr.length > 1) {
+	            index = partition(arr, left, right);
+	            if (left < index - 1) {
+	                quickSort(arr, left, index - 1);
+	            }
+	            if (index < right) {
+	                quickSort(arr, index, right);
+	            }
+	        }
+	        return arr;
+	    }
+	    function quickSort(arr, left, right) {
+	        var index;
+	        if (arr.length > 1) {
+	            index = partition(arr, left, right);
+	            if (left < index - 1) {
+	                quickSort(arr, left, index - 1);
+	            }
+	            if (index < right) {
+	                quickSort(arr, index, right);
+	            }
+	        }
+	        document.getElementById('C').innerHTML=arr.toString();
+	    }
+		</script>
+	</body>
+</HTML>
+
+
+

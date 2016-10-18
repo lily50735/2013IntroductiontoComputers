@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<HTML>
+	<head>
+		<title>資料鍵入</title>
+		<style>
+			body{
+				color: 	brown;	
+				font-family: Microsoft Sans Serif, Cambria, DFHsiu Std W3, Microsoft JhengHei, DFKai-SB ;
+			}
+			table{
+				border: 1px blue solid;
+				width:auto;
+				height:auto;
+				text-align: center;
+				margin-right: auto;
+				margin-left: auto;
+				z-index: 0;
+			}
+			td{
+				border: 1px black solid;
+				height: auto;
+				border-spacing:auto;
+				padding:10px;					
+			}
+			.divt{
+				z-index: 10
+			}
+			#divbg{
+				position: absolute;
+				left:50%;
+				margin-left: -750px;
+				opacity: 0.3; 
+				z-index: -10;
+			}
+			#div2{
+				width: 100px;
+				height: auto;
+				margin-right: auto;
+				margin-left: auto;
+				background-color: white;
+				color: dimgray;
+				text-align: center;
+				border-radius: 5px;
+			}
+		</style>	
+	</head>
+	<body>
+		<div id="divbg">
+			<img src="http://cloudtalent.co.uk/blog/wp-content/uploads/2013/09/big-data-2.png"></img>
+		</div>
+		<div class="divt">
+			<table>
+				<tr>
+					<td colspan="2"> 資料鍵入 </td>
+				<tr/>
+				<tr>
+					<td>資料名稱</td><td>資料內容</td>
+				<tr/>
+				<tr>
+					<td><p id="Name"/></td><td><p id="Value"/></td>
+				<tr/>
+				<tr>
+					<td><input id="N" value=""/></td><td><input id="V" value=""/></td>
+				<tr/>
+				<tr>
+					<td>以物件表示</td>
+					<td><p id="Object"/></td>
+				</tr>
+				<tr>
+					<td>以陣列表示</td>
+					<td><p id="Array"/></td>
+				</tr>
+				<tr>
+					<td colspan="2"><button type="button" onclick="typein()">Enter</button></td>
+				</tr>
+			</table>
+		</div>
+		<div id="div2"> 
+			<p>尤靜汶 <br/>99203066</p>
+		</div>
+		<script>
+			var data = {};
+			var array = [];
+			var name = "";
+			var value = "";
+			var counter= 1;
+
+			function typein(){
+				var n = document.getElementById("N").value;			
+				if (name == ""){
+					name = "第1項:" + n ;
+				} else {
+					name += ",\n" + "第"+ counter +"項" + ":" + n ;
+				}
+				var v = document.getElementById("V").value;
+				if (value == ""){
+					value = "1:" + v;
+				} else {
+					value += ",\n" + "第"+ counter +"項"  + ":" + v;
+				}
+				
+				data[n] = v;
+				array.push(v);
+				
+				document.getElementById("N").value = "";
+				document.getElementById("V").value = "";
+				document.getElementById("Name").innerHTML = name.toString();
+				document.getElementById("Value").innerHTML = value.toString();
+				document.getElementById("Object").innerHTML = JSON.stringify(data);
+				document.getElementById("Array").innerHTML = array.toString();
+
+				counter++;
+			}
+		</script>
+	</body>
+</HTML>

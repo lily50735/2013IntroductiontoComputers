@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<HTML>
+	<head>
+		<title>Merge Sort</title>
+		<style>
+			body{
+				color: 	brown;	
+				font-family: Microsoft Sans Serif, Cambria, DFHsiu Std W3, Microsoft JhengHei, DFKai-SB ;
+			}
+			table{
+				border: 1px black solid;
+				text-align: center;
+				margin-right: auto;
+				margin-left: auto;
+				z-index: 0;
+			}
+			tbody{
+				width:auto;
+				height:auto;
+			}
+			td{
+				border: 1px blue solid;
+				height: 40;
+				border-spacing:auto;
+				padding:10px;					
+			}
+			#div{
+				position: relative;
+			}
+			.divt{
+				position: relative; 
+				z-index:2;
+			}
+			#divbg{
+				position: absolute;
+				left:50%;
+				margin-left: -800px;
+				opacity: 0.3; 
+				z-index: -10;
+			}
+			#div2{
+				position: relative;
+				width: 100px;
+				height: auto;
+				margin-right: auto;
+				margin-left: auto;
+				background-color: grey;
+				color:white;
+				text-align: center;
+				border-radius: 5px;
+			}
+		</style>	
+	</head>
+	<body>
+		<div id="divbg">
+			<img src="http://jackmalcolm.com/blog/wp-content/uploads/2011/09/numbers.jpg"></img>
+		</div>
+		<div class="divt">
+			<table>
+				<tbody>
+					<tr>
+						<td colspan='2'>Merge Sort</td>
+					</tr>
+					<tr>
+						<td>您要製造的亂數量</td>
+						<td>
+							<input id="A" value=""></input>
+							<button type="button" onclick="ctrller('randomnum')">製造亂數</button>
+						</td>	
+					</tr>
+					<tr>
+						<td>您製造的亂數</td>
+						<td>
+							<p id="B"/>
+						</td>	
+					</tr>
+					<tr>
+						<td>
+							<button type="button" onclick="ctrller('mergeSort')">排列您製造的亂數</button>
+						</td>
+						<td>
+							<p id="C"/>
+						</td>	
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="div2"> 
+				<p>尤靜汶 <br/>99203066</p>
+			</div>
+		<script>
+		
+		var srr = new Array();
+		var drr = new Array();
+
+		function ctrller(keyname){
+			if(keyname=='randomnum'){
+				randomnum();
+			}else if(keyname=='mergeSort'){
+				mergeSort();
+			}
+		}
+		function randomnum(){
+			var q = document.getElementById('A').value;
+			if(isNaN(q)){
+				alert('請輸入數字!');
+			}else{	
+				for (var i = 0; i <q; i++){
+					do{
+						srr[i]=Math.round(Math.random()*100);
+						for(var j=0;j<i;j++){
+							if (srr[i]==srr[j]){
+								srr[i]=0
+								break;
+							}
+						}
+					}while(srr[i]==0); 
+				}
+			}
+			document.getElementById('B').innerHTML=srr.toString();
+		}
+		function mergeSort(){
+			for (var i=1; i<srr.length; i*=2){
+				segMerge(i);
+				var t = srr;
+				srr = drr;
+				drr = t;
+			}
+			document.getElementById('C').innerHTML=drr.toString();
+		}
+		function segMerge(seglen) {
+			for(var i=0; i<srr.length; i+=seglen*2){
+				merge(i,seglen);
+			}
+		}	
+		function merge (start,seglen) {
+			var seg1 = start, 
+				seg2 = start+seglen,
+				d = start,
+				seg1b = start+seglen,
+				seg2b = start+seglen*2;
+			for( ; (seg1<seg1b)&&(seg2<seg2b);d++){
+				if(srr[seg1]>=srr[seg2]){
+					drr[d] = srr[seg2];
+					seg2++;
+				}else{
+					drr[d] = srr[seg1];
+					seg1++;
+				}
+			}
+			if(seg1==seg1b){
+				for(;seg2<seg2b;d++){
+					drr[d]=srr[seg2];
+					seg2++;
+				}
+			}else{
+				for(;seg1<seg1b;d++){
+					drr[d]=srr[seg1];
+					seg1++;
+				}
+			}	
+		}
+		</script>
+	</body>
+</HTML>
+
+
+

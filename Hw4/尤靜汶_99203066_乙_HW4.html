@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+<HTML>
+	<head>
+		<title>大樂透選號程式</title>
+		<style>
+			body{
+				color: 	brown;	
+				text-align: center;
+				font-family: Microsoft Sans Serif, Cambria, DFHsiu Std W3, Microsoft JhengHei, DFKai-SB ;
+			}
+			table{
+				border: 1px black solid;
+				text-align: center;
+				margin-right: auto;
+				margin-left: auto;
+				z-index: 0;
+			}
+			tbody{
+				width:auto;
+				height:auto;
+			}
+			td{
+				height: 40;
+				border-spacing:auto;
+				padding:10px;					
+			}
+			#div{
+				position: absolute;
+			}
+			.divt1{
+				position: relative; 
+				z-index:2;
+			}
+			#tnumber{
+				position: relative;
+				height: 622;
+				width: 262;
+			}
+			#divbg{
+				position: absolute;
+				left:50%;
+				margin-left: -505px;
+				opacity: 0.3; 
+				z-index: -10;
+			}
+			#div2{
+				position: relative;
+				width: 100px;
+				height: auto;
+				margin-right: auto;
+				margin-left: auto;
+				background-color: grey;
+				color:white;
+				text-align: center;
+				border-radius: 5px;
+			}
+		</style>	
+	</head>
+	<body>
+		<div id="divbg">
+			<img src="http://2.bp.blogspot.com/_Y-FaHUa9oSU/TDUn99a37iI/AAAAAAAAB-o/pPv0gNHEgnI/s1600/一堆鈔票.jpg"></img>
+		</div>
+		<div class="divt1">
+			<table>
+				<tbody>
+					<tr>
+						<td><img class="sball" src="pic/sball/s1.png"/></td>
+						<td><img class="sball" src="pic/sball/s2.png"/></td>
+						<td><img class="sball" src="pic/sball/s3.png"/></td>
+						<td><img class="sball" src="pic/sball/s4.png"/></td>
+						<td><img class="sball" src="pic/sball/s5.png"/></td>
+						<td><img class="sball" src="pic/sball/s6.png"/></td>
+						<td><img class="sball" src="pic/sball/s7.png"/></td>
+						<td><img class="sball" src="pic/sball/s8.png"/></td>
+						<td><img class="sball" src="pic/sball/s9.png"/></td>
+						<td><img class="sball" src="pic/sball/s10.png"/></td>
+					</tr>
+					<tr>
+						<td><img class="sball" src="pic/sball/s11.png"/></td>
+						<td><img class="sball" src="pic/sball/s12.png"/></td>
+						<td><img class="sball" src="pic/sball/s13.png"/></td>
+						<td><img class="sball" src="pic/sball/s14.png"/></td>
+						<td><img class="sball" src="pic/sball/s15.png"/></td>
+						<td><img class="sball" src="pic/sball/s16.png"/></td>
+						<td><img class="sball" src="pic/sball/s17.png"/></td>
+						<td><img class="sball" src="pic/sball/s18.png"/></td>
+						<td><img class="sball" src="pic/sball/s19.png"/></td>
+						<td><img class="sball" src="pic/sball/s10.png"/></td>
+					</tr>
+					<tr>
+						<td><img class="sball" src="pic/sball/s21.png"/></td>
+						<td><img class="sball" src="pic/sball/s22.png"/></td>
+						<td><img class="sball" src="pic/sball/s23.png"/></td>
+						<td><img class="sball" src="pic/sball/s24.png"/></td>
+						<td><img class="sball" src="pic/sball/s25.png"/></td>
+						<td><img class="sball" src="pic/sball/s26.png"/></td>
+						<td><img class="sball" src="pic/sball/s27.png"/></td>
+						<td><img class="sball" src="pic/sball/s28.png"/></td>
+						<td><img class="sball" src="pic/sball/s29.png"/></td>
+						<td><img class="sball" src="pic/sball/s30.png"/></td>
+					</tr> 
+					<tr>
+						<td><img class="sball" src="pic/sball/s31.png"/></td>
+						<td><img class="sball" src="pic/sball/s32.png"/></td>
+						<td><img class="sball" src="pic/sball/s33.png"/></td>
+						<td><img class="sball" src="pic/sball/s34.png"/></td>
+						<td><img class="sball" src="pic/sball/s35.png"/></td>
+						<td><img class="sball" src="pic/sball/s36.png"/></td>
+						<td><img class="sball" src="pic/sball/s37.png"/></td>
+						<td><img class="sball" src="pic/sball/s38.png"/></td>
+						<td><img class="sball" src="pic/sball/s39.png"/></td>
+						<td><img class="sball" src="pic/sball/s40.png"/></td>
+					</tr>
+					<tr>
+						<td><img class="sball" src="pic/sball/s41.png"/></td>
+						<td><img class="sball" src="pic/sball/s42.png"/></td>
+						<td><img class="sball" src="pic/sball/s43.png"/></td>
+						<td><img class="sball" src="pic/sball/s44.png"/></td>
+						<td><img class="sball" src="pic/sball/s45.png"/></td>
+						<td><img class="sball" src="pic/sball/s46.png"/></td>
+						<td><img class="sball" src="pic/sball/s47.png"/></td>
+						<td><img class="sball" src="pic/sball/s48.png"/></td>
+						<td><img class="sball" src="pic/sball/s49.png"/></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>	
+		<div>
+			<table id='tnumber'>
+				<tbody>
+					<tr>
+						<td colspan="2">						
+							<button type="button" onclick="choose()">選號</button><br/>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2"> 開出號碼	</td>
+					</tr>
+					<tr>	
+						<td>普通號</td>
+						<td>
+							<img name="pic1" src="pic/0.png"/>
+							<img name="pic2" src="pic/0.png"/>
+							<img name="pic3" src="pic/0.png"/>
+							<img name="pic4" src="pic/0.png"/>
+							<img name="pic5" src="pic/0.png"/>
+						</td>
+					</tr>	
+					<tr>
+						<td>特別號</td>
+						<td><img name="pic6" src="pic/0.png"/></td>
+					</tr>
+					<tr>
+						<td>
+							<button type="button" onclick="bubbleSort()">遞增排列</button>
+						</td>
+						<td><p id="C"/></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="div2"> 
+				<p>尤靜汶 <br/>99203066</p>
+			</div>
+		<script>
+			var lottery = [0,0,0,0,0,0];
+			var special;
+			var imgfile = new Array(49);
+				imgfile[1]="pic/rball/r1.png"
+				imgfile[2]="pic/rball/r2.png"
+				imgfile[3]="pic/rball/r3.png"
+				imgfile[4]="pic/rball/r4.png"
+				imgfile[5]="pic/rball/r5.png"
+				imgfile[6]="pic/rball/r6.png"
+				imgfile[7]="pic/rball/r7.png"
+				imgfile[8]="pic/rball/r8.png"
+				imgfile[9]="pic/rball/r9.png"
+				imgfile[10]="pic/rball/r10.png"
+				imgfile[11]="pic/rball/r11.png"
+				imgfile[12]="pic/rball/r12.png"
+				imgfile[13]="pic/rball/r13.png"
+				imgfile[14]="pic/rball/r14.png"
+				imgfile[15]="pic/rball/r15.png"
+				imgfile[16]="pic/rball/r16.png"
+				imgfile[17]="pic/rball/r17.png"
+				imgfile[18]="pic/rball/r18.png"
+				imgfile[19]="pic/rball/r19.png"
+				imgfile[20]="pic/rball/r20.png"
+				imgfile[21]="pic/rball/r21.png"
+				imgfile[22]="pic/rball/r22.png"
+				imgfile[23]="pic/rball/r23.png"
+				imgfile[24]="pic/rball/r24.png"
+				imgfile[25]="pic/rball/r25.png"
+				imgfile[26]="pic/rball/r26.png"
+				imgfile[27]="pic/rball/r27.png"
+				imgfile[28]="pic/rball/r28.png"
+				imgfile[29]="pic/rball/r29.png"
+				imgfile[30]="pic/rball/r30.png"
+				imgfile[31]="pic/rball/r31.png"
+				imgfile[32]="pic/rball/r32.png"
+				imgfile[33]="pic/rball/r33.png"
+				imgfile[34]="pic/rball/r34.png"
+				imgfile[35]="pic/rball/r35.png"
+				imgfile[36]="pic/rball/r36.png"
+				imgfile[37]="pic/rball/r37.png"
+				imgfile[38]="pic/rball/r38.png"
+				imgfile[39]="pic/rball/r39.png"
+				imgfile[40]="pic/rball/r40.png"
+				imgfile[41]="pic/rball/r41.png"
+				imgfile[42]="pic/rball/r42.png"
+				imgfile[43]="pic/rball/r43.png"
+				imgfile[44]="pic/rball/r44.png"
+				imgfile[45]="pic/rball/r45.png"
+				imgfile[46]="pic/rball/r46.png"
+				imgfile[47]="pic/rball/r47.png"
+				imgfile[48]="pic/rball/r48.png"
+				imgfile[49]="pic/rball/r49.png"
+			var my_pic = document.getElementsByClassName("sball");
+			
+			function choose(){
+				if(lottery[3]!=0){
+					resetpic();
+					randomnum();
+				}else{
+					randomnum();
+				}
+			}
+			function randomnum(){
+				for (var i = 0; i <6; i++){
+					do{
+						lottery[i]=Math.round(Math.random()*49);
+						for(var j=0;j<i;j++){
+							if (lottery[i]==lottery[j]){
+								lottery[i]=0
+								break;
+							}
+						}
+					}while(lottery[i]==0); 
+				}
+				changepic();
+				document.pic1.src = imgfile[lottery[0]]
+				document.pic2.src = imgfile[lottery[1]]
+				document.pic3.src = imgfile[lottery[2]]
+				document.pic4.src = imgfile[lottery[3]]
+				document.pic5.src = imgfile[lottery[4]]
+				document.pic6.src = imgfile[lottery[5]]
+				special = lottery[5];	
+				lottery.pop()	
+			}
+			function bubbleSort(){
+				for (var i = lottery.length; i > 0; i--){
+					moveMaxToRight();
+				}
+				document.getElementById("C").innerHTML = "普通號："+ lottery.toString()+"  特別號：" +special;	
+			}
+			function moveMaxToRight(){
+				for(var i = 0; i < lottery.length-1; i++){
+		 				if(lottery[i] > lottery[i+1])
+		 				   	swap(i);
+		 			}
+			}
+			function swap(i){
+				var temp = lottery[i];
+	        	lottery[i] = lottery[i+1];
+	        	lottery[i+1] = temp;
+			}
+			
+			function resetpic(){
+				var re_pic = document.getElementsByClassName("sball");
+				for(var i=0;i<re_pic.length;i++){
+					re_pic[i].src = "pic/sball/s"+(i+1)+".png";
+				}
+			}
+			function changepic(){
+				var my_pic = document.getElementsByClassName("sball");
+				for(var i=0;i<6;i++){
+					my_pic[lottery[i]-1].src = "pic/rball/r"+lottery[i]+".png";
+				}
+			}
+		</script>
+	</body>
+</HTML>
+
+
+

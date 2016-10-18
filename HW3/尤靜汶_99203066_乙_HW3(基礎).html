@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<HTML>
+	<head>
+		<title>數字列表與運算</title>
+		<style>
+			body{
+				color:#1F0F00;	
+				font-family: Microsoft Sans Serif, Cambria, DFHsiu Std W3, Microsoft JhengHei, DFKai-SB ;
+			}
+			table{
+				border: 1px blue solid;
+				width:auto;
+				height:auto;
+				text-align: center;
+				margin-right: auto;
+				margin-left: auto;
+				z-index: 0;
+			}
+			td{
+				border: 1px black solid;
+				height: fixed;
+				border-spacing:auto;
+				padding:10px;					
+			}
+			.divt{
+				z-index: 10
+			}
+			#divbg{
+				position: absolute;
+				left:50%; 
+				top:50%;
+				margin-top: -600px;
+				margin-left: -800px;
+				opacity: 0.5; 
+				z-index: -10;
+			}
+			#div2{
+				width: 100px;
+				height: auto;
+				margin-right: auto;
+				margin-left: auto;
+				background-color: white;
+				color: dimgray;
+				text-align: center;
+				border-radius: 5px;
+			}
+		</style>	
+	</head>
+	<body>
+		<div id="divbg">
+			<img src="http://jackmalcolm.com/blog/wp-content/uploads/2011/09/numbers.jpg"></img>
+		</div>
+		<div class="divt">
+			<table>
+				<tr>
+					<td colspan="2">數字列表與運算</td>
+				</tr>
+				<tr>
+					<td>請輸入數字</td>
+					<td>
+						<input id="A" value=""/>
+						<button type="button" onclick="load()">Enter</button>
+					</td>
+				</tr>
+				<tr>
+					<td>你輸入的數字</td>
+					<td><p id="B"/></td>
+				</tr>
+				<tr>
+					<td>數字加總</td>
+					<td><p id="C"/></td>
+				</tr>
+				<tr>
+					<td>數字相乘</td>
+					<td><p id="F"/></td>
+				</tr>
+				<tr>
+					<td>數字相除</td>
+					<td><p id="G"/></td>
+				</tr>
+				<tr>
+					<td>數字指數運算</td>
+					<td><p id="H"/></td>
+				</tr>
+				<tr>
+					<td>以物件表示</td>
+					<td><p id="D"/></td>
+				</tr>
+				<tr>
+					<td>以陣列表示</td>
+					<td><p id="E"/></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<a href="javascript:document.location.reload();">
+							<button>Clear</button>
+						</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="div2"> 
+			<p>尤靜汶 <br/>99203066</p>
+		</div>
+		<script>
+			var d = {};
+			var e = [];
+			var counter = Number(1);
+			
+			function load(){
+				var a = document.getElementById("A").value;
+				var b = document.getElementById("B").innerHTML;
+				if (b == ""){
+					b = a;
+				} else {
+					b += ", " + a;
+				}
+				var c = Number(document.getElementById("C").innerHTML)+Number(a);
+				var f = Number(document.getElementById("F").innerHTML);
+		        if (f == ""){
+		          f = a;
+		        }else{
+		          f *= a;
+		        }
+		        var g = Number(document.getElementById("G").innerHTML); 
+		        if (g == ""){
+		          g = a;
+		        }else{
+		          g /= a; 
+		        }
+		        var h = Number(document.getElementById("H").innerHTML);
+		        if (h == ""){
+		          h = a;
+		        }else{
+		          h = Math.pow(h,a); 
+		        }           
+
+				d[counter] = a;
+				e.push(a);
+
+				document.getElementById("A").value = "";
+				document.getElementById("B").innerHTML = b.toString();
+				document.getElementById("C").innerHTML = c.toString();
+				document.getElementById("D").innerHTML = JSON.stringify(d);
+				document.getElementById("E").innerHTML = e.toString();
+				document.getElementById("F").innerHTML = f.toString();
+				document.getElementById("G").innerHTML = g.toString();
+				document.getElementById("H").innerHTML = h.toString();
+				counter++; 		
+			}
+			
+		</script>
+
+	</body>
+</HTML>
